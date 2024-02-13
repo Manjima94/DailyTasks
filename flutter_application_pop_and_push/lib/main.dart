@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_todo/pop.dart';
-import 'package:flutter_application_todo/todo.dart';
+import 'package:flutter_application_pop_and_push/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,14 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-       
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+        
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const pop(),
+      home: const MyHomePage(),
     );
   }
 }

@@ -13,12 +13,25 @@ class Task extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: SizedBox(
           width: 400,
-          child: TextField(
-            decoration: InputDecoration(
+          child: Column(
+            children: [
+              TextField(
+                decoration: InputDecoration(
+                  
+                  hintText: 'Edit',
+                    border:
+                        OutlineInputBorder(borderRadius: BorderRadius.circular(5))),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ElevatedButton(onPressed: (){}, child: const Text('Save',style: TextStyle(color: Colors.black),)),
+                
               
-              hintText: 'Edit',
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(5))),
+              ElevatedButton(onPressed: (){}, child: const Text('Cancel',style: TextStyle(color: Colors.black),)),
+                ],
+              ),
+            ],
           ),
         ),
       ),

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors,// ignore: prefer_const_constructors, prefer_const_constructors, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_todo/add.dart';
 import 'package:flutter_application_todo/task.dart';
@@ -10,6 +12,7 @@ class Todo extends StatefulWidget {
 }
 
 class _TodoState extends State<Todo> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,6 +79,7 @@ class _TodoState extends State<Todo> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  
                   Text(
                     '1',
                     style: TextStyle(color: Colors.white),
@@ -96,9 +100,12 @@ class _TodoState extends State<Todo> {
                     '5',
                     style: TextStyle(color: Colors.white),
                   ),
-                  Text(
-                    '6',
-                    style: TextStyle(color: Colors.white),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      '6',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                   Text(
                     '7',
@@ -141,7 +148,7 @@ class _TodoState extends State<Todo> {
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) {
-                                return Task();
+                                return const Task();
                               },
                             ));
                           },
@@ -301,20 +308,23 @@ class _TodoState extends State<Todo> {
                 ),
               ),
             ),
-            FloatingActionButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) {
-                    return const Add();
-                  },
-                ));
-              },
-              shape: const CircleBorder(eccentricity: 1),
-              backgroundColor: Colors.cyan,
-              child: const Icon(
-                Icons.add,
-                color: Colors.white,
-                size: 34,
+            Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: FloatingActionButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) {
+                      return const Add();
+                    },
+                  ));
+                },
+                shape: const CircleBorder(eccentricity: 1),
+                backgroundColor: Colors.cyan,
+                child: const Icon(
+                  Icons.add,
+                  color: Colors.white,
+                  size: 34,
+                ),
               ),
             )
           ],
